@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*------------------------- NoDataMessage -------------------------*/
+.no_data_message {
+  @apply text-xl mx-auto pt-20 font-bold flex justify-center;
+}
+
+/*------------------------- AllProductsData -------------------------*/
+.all_products_grid {
+  @apply grid lg:grid-cols-4 md:grid-cols-3 w-11/12 gap-4 mx-auto;
+}

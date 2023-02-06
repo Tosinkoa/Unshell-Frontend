@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*------------------------- Pagination -------------------------*/
+.pagination_np_button {
+  @apply bg-green-300;
+}
+
+/*------------------------- Formik -------------------------*/
+.mylabel {
+  @apply font-bold mb-1;
+}
+
+/*------------------------- AllItems -------------------------*/
+.all_items_bg {
+  @apply w-full min-w-full h-60 rounded-md relative hover:scale-105 transition-all duration-700 border-2 shadow-md items-center cursor-pointer;
+}
+
+.item_listing_details {
+  @apply flex flex-col font-bold w-11/12 justify-between mx-auto mt-2 text-base h-12;
+}
+
+.item_listing_product_name {
+  @apply w-full truncate flex;
+}
+
+/*------------------------- PaginationButton -------------------------*/
+.pagination_button_bg {
+  @apply flex flex-col space-y-3 md:flex-row justify-between pr-10 mt-10 w-10/12 mx-auto items-center;
+}
+.pagination_button_form {
+  @apply flex w-fit flex-col space-y-1 place-content-center;
+}
+.pagination_button_input {
+  @apply border-2 h-8 w-24 rounded-sm dark:text-gray-800 placeholder:text-gray-400;
+}
+.pagination_button_next_previous {
+  @apply py-1 bg-primary-600 text-gray-50 disabled:bg-primary-200 hover:bg-primary-400 text-lg px-2 shadow-lg  rounded-md ml-auto;
+}
+
+/*------------------------- Loading -------------------------*/
+.loading_bg {
+  @apply w-full place-content-center mt-60;
+}
+.loading_spinner {
+  @apply animate-spin h-12 w-12 md:h-10 md:w-10 border-2 border-gray-800 dark:border-gray-50  my-2 mx-auto flex;
+}

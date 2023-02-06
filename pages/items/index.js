@@ -3,52 +3,46 @@ import AllProductsData from "@/components/Home/AllProductsData"
 import NoDataMessage from "@/components/Home/NoDataMessage"
 import Loading from "@/components/Utils/Loading"
 import PaginationButton from "@/components/Utils/PaginationButton"
-import { useGetAllProductsQuery } from "@/store/APIs/productApi"
+import { useOrderItemsQuery } from "@/store/APIs/orderApi"
 import { amountOfDataToFetchActions } from "@/store/slices/amount-of-data-to-fetch-slice"
 import "aos/dist/aos.css"
 import { useDispatch, useSelector } from "react-redux"
 
-const Home = () => {
+const Items = () => {
   const initialDataLimit = useSelector((state) => state.amountOfDataToFetch.initialDataToFetch)
   const initialDataOffset = useSelector((state) => state.amountOfDataToFetch.initialDataOffset)
-  const maxDataAvailable = useSelector((state) => state.amountOfDataToFetch.maximumData)
   const dispatch = useDispatch()
 
   const {
-    currentData: allProductsData,
-    isLaoding: allProductsDataIsLoading,
-    isSuccess: allProductsDataSuccess,
-    isError: allProductsDataError,
-    isFetching: allProductsDataIsFetching,
-  } = useGetAllProductsQuery(
-    { limit: initialDataLimit, offset: initialDataOffset },
-    { refetchOnMountOrArgChange: true }
-  )
+    currentData: allOrderData,
+    isError: allOrderDataError,
+    isFetching: allOrderDataIsFetching,
+  } = useOrderItemsQuery({ limit: initialDataLimit, offset: initialDataOffset }, { refetchOnMountOrArgChange: true })
 
   // Fetch next data whenever next button is clicked <PaginationButton /> component
   const fetchNextData = () => {
-    dispatch(amountOfDataToFetchActions.maxDataFunction(allProductsData?.total))
+    dispatch(amountOfDataToFetchActions.maxDataFunction(allOrderData?.total))
     if (initialDataOffset === 0)
       return dispatch(amountOfDataToFetchActions.additionalDataOffsetFunction(initialDataOffset + initialDataLimit))
     dispatch(amountOfDataToFetchActions.additionalDataOffsetFunction(initialDataOffset))
   }
 
-  // Fetch previous data whenever next button is clicked <PaginationButton /> component
+  // Fetch previous data whenever next button is clicked in the <PaginationButton /> component
   const fetchPreviousData = () => {
-    dispatch(amountOfDataToFetchActions.maxDataFunction(allProductsData?.total))
+    dispatch(amountOfDataToFetchActions.maxDataFunction(allOrderData?.total))
     dispatch(amountOfDataToFetchActions.subtractDataOffsetFunction(initialDataOffset))
   }
 
   return (
     <Layout>
-      {allProductsDataIsFetching && <Loading />}
-      {!allProductsDataIsLoading && allProductsDataError && <NoDataMessage />}
-      {!allProductsDataIsFetching && !allProductsDataError && (
+      {allOrderDataIsFetching && <Loading />}
+      {!allOrderDataIsFetching && allOrderDataError && <NoDataMessage content="You didnot have any order!" />}
+      {!allOrderDataIsFetching && !allOrderDataError && (
         <>
-          <AllProductsData allProductsData={allProductsData} />
+          <AllProductsData allProductsData={allOrderData} />
           <PaginationButton
-            totalAmountOfDataShowing={allProductsData?.data?.length}
-            total={allProductsData?.total}
+            totalAmountOfDataShowing={allOrderData?.data?.length}
+            total={allOrderData?.total}
             fetchNextData={fetchNextData}
             fetchPreviousData={fetchPreviousData}
           />
@@ -58,4 +52,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Items

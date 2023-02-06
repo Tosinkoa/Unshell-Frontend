@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*-----------------------ProfileForm----------------------*/
+.profile_bg {
+  @apply relative h-60 w-60 mx-auto  mt-8;
+}
+
+.profile_form_bg {
+  @apply flex w-fit flex-col place-content-center mx-auto space-y-2;
+}
+
+.profile_input {
+  @apply border-2 h-10 w-full rounded-sm flex dark:text-gray-800 placeholder:text-gray-400;
+}
+
+.profile_form_button {
+  @apply py-1 !bg-primary-600 text-gray-50 disabled:!bg-primary-200 hover:!bg-primary-400 text-lg px-4 shadow-lg  rounded-md ml-auto flex;
+}
+
+/*-----------------------ProfileComponent---------------------*/
+.profile_component_bg {
+  @apply relative h-60 w-60 mx-auto  mt-8;
+}
+
+.profile_component_user_detail_bg {
+  @apply flex flex-col w-fit mx-auto font-bold text-xl mt-3;
+}
+
+.profile_component_button {
+  @apply py-1 bg-primary-600 text-gray-50 disabled:bg-primary-200 hover:bg-primary-400 text-lg px-2 shadow-lg  rounded-md w-full mt-8;
+}

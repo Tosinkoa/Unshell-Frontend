@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+/*----------------------LoginComponent----------------*/
+.auth_logo_header {
+  @apply cursor-default flex  items-center;
+}
+.auth_logo_background {
+  @apply h-full w-full -space-x-4 flex flex-row  justify-center items-center;
+}
+.auth_logo_text {
+  @apply md:text-4xl sm:text-2xl  font-roboto text-indigo-900 flex;
+}
+.auth_form_header {
+  @apply border dark:border-gray-400  rounded lg:w-2/5 justify-center mx-auto  md:w-5/12 sm:w-10/12  mt-0 shadow-lg p-10;
+}
+.auth_form_header_text {
+  @apply text-2xl font-extrabold leading-6;
+}
+.form_error {
+  @apply text-red-500 sm:text-sm md:text-base flex;
+}
+.auth_form {
+  @apply bg-white border dark:ring-2 text-gray-800 dark:ring-gray-50 border-gray-400 rounded sm:text-xs md:text-base font-medium leading-none  py-3 w-full pl-3 mt-2;
+}
+.formshowpassword {
+  @apply absolute right-0 mt-2 mr-3 border-none cursor-pointer;
+}
+.authformbutton {
+  @apply focus:ring-2 focus:ring-offset-2 focus:ring-green-700 text-sm font-semibold leading-none text-white focus:outline-none bg-primary-600 border rounded hover:bg-primary-400  w-full disabled:bg-gray-500;
+}
+.authformlabel {
+  @apply text-sm font-medium leading-none;
+}
+.auth_switch {
+  @apply text-sm font-medium leading-none underline  cursor-pointer;
+}
+.auth_question {
+  @apply text-sm mt-4 font-medium leading-none text-center  space-x-2;
+}
+.auth_switch {
+  @apply text-sm font-medium leading-none underline  cursor-pointer;
+}
+.login_comp_show_password_button {
+  @apply border-none flex text-gray-800  bottom-3 cursor-pointer;
+}
+.login_comp_loading_spinner {
+  @apply animate-spin h-7 w-7 border-2 border-t-0 rounded-full my-2 mx-auto flex;
+}
+.login_comp_forgot_password {
+  @apply underline font-semibold w-full flex cursor-pointer;
+}

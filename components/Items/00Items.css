@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*-------------------------ItemForm--------------------*/
+.item_form_profile_img {
+  @apply relative h-64 w-64 md:w-[50%] md:h-[50vh] mx-auto flex mb-5 md:mb-8;
+}
+.item_form_bg {
+  @apply flex w-fit flex-col place-content-center mx-auto space-y-2;
+}
+.item_form_input {
+  @apply border-2 h-10 w-full rounded-sm flex dark:text-gray-800 placeholder:text-gray-400;
+}
+.item_form_button {
+  @apply py-1 !bg-primary-600 text-gray-50 disabled:!bg-primary-200 hover:!bg-primary-400 text-lg px-2 shadow-lg rounded-md ml-auto flex w-20;
+}
+.item_form_spinner {
+  @apply animate-spin h-3 w-3 border-2 border-t-0 rounded-full my-2 mx-auto flex;
+}
+
+/*-------------------------ViewItemComponent--------------------*/
+.view_item_comp_back_button {
+  @apply cursor-pointer text-3xl ml-10  md:ml-28 lg:ml-44 mb-5 md:mb-8 mt-20 md:mt-28;
+}
+.view_item_comp_img_bg {
+  @apply relative h-64 w-64 md:w-[50%] md:h-[50vh] mx-auto flex;
+}
+.view_item_comp_bg {
+  @apply mt-6 mx-auto  w-fit md:text-lg  flex flex-col font-bold;
+}
+.view_item_comp_edit_button {
+  @apply py-1 px-3 bg-primary-600 hover:bg-primary-400 rounded shadow-md text-white font-medium;
+}
+.view_item_comp_button_bg {
+  @apply flex justify-between mt-8;
+}
+
+/*-------------------------DeleteItemButton--------------------*/
+.delete_item_comp_button {
+  @apply py-1 px-3  bg-rose-600 hover:bg-rose-400 shadow-md rounded text-white font-medium;
+}
