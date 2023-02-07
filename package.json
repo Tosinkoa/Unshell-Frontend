@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fast": "yarn build && git add . && git commit -m 'Done' && git push https://github.com/Tosinkoa/Unshell-Frontend-Assessment.git"
   },
   "dependencies": {
     "@dicebear/collection": "^5.3.0",

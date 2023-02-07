@@ -50,7 +50,7 @@ const ViewItems = () => {
   }, [fetchedProductName])
 
   useEffect(() => {
-    if (!allProductsDataIsFetching && allProductsDataError) return router.push("/404")
+    if (!allProductsDataIsFetching && allProductsDataError) return router.back()
   }, [allProductsDataIsFetching, allProductsDataError])
 
   return (
