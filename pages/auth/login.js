@@ -4,7 +4,7 @@ import Layout from "@/components/Helper/Layout"
 
 function Login() {
   return (
-    <Layout dontShowNavbarOrNotification={true}>
+    <Layout>
       <LoginComponent />
     </Layout>
   )

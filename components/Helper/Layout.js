@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css"
 import NavBar from "./Navbar"
 import SideBar from "./Sidebar"
 
-const Layout = ({ title, keywords, description, children, dontShowNavbarOrNotification, dontShowFooter }) => {
+const Layout = ({ title, keywords, description, children, dontShowNavbarOrNotification }) => {
   const [showSideBar, setSideBar] = useState(false)
 
   const sideBarHandler = () => setSideBar(!showSideBar)
