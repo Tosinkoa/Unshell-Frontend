@@ -8,7 +8,7 @@ const SideBar = ({ sideBarHandler, showSideBar }) => {
   const [showProfile, setShowProfile] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
   const [showLogout, setShowLogout] = useState(false)
-  const [showLogin, setShowLogin] = useState(false)
+  const [showLogin, setShowLogin] = useState(true)
 
   const result = useGetAuthQuery()
   useEffect(() => {

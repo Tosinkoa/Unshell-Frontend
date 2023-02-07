@@ -23,7 +23,7 @@
   @apply md:text-4xl sm:text-2xl  font-roboto text-indigo-900 flex;
 }
 .auth_form_header {
-  @apply border dark:border-gray-400  rounded lg:w-2/5 justify-center mx-auto  md:w-5/12 sm:w-10/12  mt-0 shadow-lg p-10;
+  @apply border dark:border-gray-400  rounded lg:w-2/5 justify-center mx-auto  md:w-5/12 sm:w-10/12  md:mt-0 shadow-lg pt-16 p-10 mt-24;
 }
 .auth_form_header_text {
   @apply text-2xl font-extrabold leading-6;
